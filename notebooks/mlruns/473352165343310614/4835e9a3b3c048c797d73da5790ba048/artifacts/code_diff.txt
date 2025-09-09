@@ -1,0 +1,22 @@
+diff --git a/notebooks/detailed_workflow.ipynb b/notebooks/detailed_workflow.ipynb
+index 02a04b2..a155c5d 100644
+--- a/notebooks/detailed_workflow.ipynb
++++ b/notebooks/detailed_workflow.ipynb
+@@ -33,7 +33,7 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": 180,
++   "execution_count": 1,
+    "id": "b96a4196",
+    "metadata": {},
+    "outputs": [],
+@@ -45,7 +45,7 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": 181,
++   "execution_count": 2,
+    "id": "9e707694",
+    "metadata": {},
+    "outputs": [],
