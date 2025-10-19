@@ -1,0 +1,54 @@
+[project]
+name = "qlib-experiment"
+version = "0.1.0"
+description = "Qlib quantitative finance research repository for Chinese A-share market strategies"
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+    # 核心依赖包
+    "numpy>=1.21.0",
+    "pandas>=1.3.0",
+    "matplotlib>=3.5.0",
+    "scikit-learn>=1.0.0",
+    "seaborn>=0.11.0",
+    # Qlib 和金融相关
+    "pyqlib",
+    "lightgbm",
+    "plotly",
+    # Jupyter 交互式组件
+    "ipywidgets>=8.0.0",
+    "jupyterlab_widgets>=3.0.0",
+    "widgetsnbextension>=4.0.0",
+    "ipympl>=0.9.0",
+    # Jupyter 环境
+    "jupyter>=1.0.0",
+    "notebook>=6.0.0",
+    "jupyterlab",
+    "statsmodels>=0.14.1",
+]
+
+[project.optional-dependencies]
+dev = [
+    "ruff",
+]
+ml-extra = [
+    "xgboost",
+    "catboost",
+    "torch",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+only-include = ["README.md"]
+
+[tool.uv]
+dev-dependencies = []
+
+[tool.ruff]
+line-length = 120
+target-version = "py38"
+select = ["E", "F", "I", "N", "W"]
+ignore = ["E501"]

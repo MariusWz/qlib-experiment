@@ -1,0 +1,22 @@
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	deleted:    00_minimal_quickstart.ipynb
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	00_quickstart.ipynb
+	mlruns/381102443107863458/
+	mlruns/473352165343310614/5d640d0c3ba44f0cb043b210ce2f552d/
+	mlruns/473352165343310614/6fc3314636e6485e91e61df67d506ee6/
+	mlruns/473352165343310614/99bc5b8c2fdb4613a1769174364f7c07/
+	mlruns/473352165343310614/c1ff534ca7464691bd5075bccb128b4f/
+	mlruns/473352165343310614/c7e432bbad0543f29c0b822aeeb11774/
+	mlruns/473352165343310614/cbeed29f989f40b3b5d61e40a667c7db/
+	mlruns/473352165343310614/d94fe575e5b445fabd981e142eb7a41a/
+	mlruns/473352165343310614/fac79bc18497417d974576cd22ee6b60/
+
+no changes added to commit (use "git add" and/or "git commit -a")

@@ -1,0 +1,14 @@
+artifact_uri: file:C:\Users\zihao\Documents\git\qlib-experiment\notebooks\mlruns/473352165343310614/5d640d0c3ba44f0cb043b210ce2f552d/artifacts
+end_time: null
+entry_point_name: ''
+experiment_id: '473352165343310614'
+lifecycle_stage: active
+run_id: 5d640d0c3ba44f0cb043b210ce2f552d
+run_name: mlflow_recorder
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1757657638916
+status: 1
+tags: []
+user_id: zihao

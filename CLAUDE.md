@@ -11,7 +11,7 @@ This is a Qlib quantitative finance research repository containing modular Jupyt
 ```
 qlib-experiment/
 ├── notebooks/
-│   ├── 00_minimal_quickstart.ipynb      # Minimal complete example for beginners
+│   ├── 00_quickstart.ipynb              # Quick start example for beginners
 │   ├── 01_introduction_and_config.ipynb # Project intro and basic configuration
 │   ├── 02_data_module_detailed.ipynb    # Data handling and preprocessing
 │   ├── 03_model_training_comprehensive.ipynb # Model training workflows
@@ -44,7 +44,7 @@ jupyter notebook
 jupyter lab
 
 # Run a specific notebook
-jupyter notebook notebooks/00_minimal_quickstart.ipynb
+jupyter notebook notebooks/00_quickstart.ipynb
 ```
 
 ### Data Operations
@@ -116,7 +116,7 @@ with R.start(experiment_name=EXP_NAME):
 - **All notebooks** require Qlib initialization at the start
 - **02_data_module** outputs can be used by **03_model_training**
 - **03_model_training** outputs (models) are used by **04_evaluation_module**
-- **00_minimal_quickstart** is standalone and contains all steps in simplified form
+- **00_quickstart** is standalone and contains all steps in simplified form
 
 ### Key Components
 
@@ -135,7 +135,7 @@ with R.start(experiment_name=EXP_NAME):
 ## Notebook Learning Path
 
 ### For Beginners
-Start with `00_minimal_quickstart.ipynb` for a complete but minimal example, then proceed:
+Start with `00_quickstart.ipynb` for a complete but minimal example, then proceed:
 1. `01_introduction_and_config.ipynb` - Setup and configuration
 2. `02_data_module_detailed.ipynb` - Understanding data handling
 3. `03_model_training_comprehensive.ipynb` - Model training details
