@@ -20,12 +20,37 @@ qlib-experiment/
 │   ├── detailed_workflow.ipynb          # Complete end-to-end workflow (26MB, comprehensive)
 │   ├── experiment_config.json           # Default experiment configuration
 │   └── mlruns/                          # MLflow experiment tracking outputs
+├── experiments/                          # Custom experiment notebooks and results
+│   ├── volume_analysis_experiment.ipynb  # Volume-based analysis experiments
+│   └── volume_analysis_results.csv       # Experiment output data
+├── pyproject.toml                        # Project metadata and dependencies
+├── uv.lock                               # Locked dependencies for reproducibility
 └── README.md                             # Project documentation
 ```
 
 ## Key Development Commands
 
 ### Environment Setup
+
+**Recommended: Using uv (faster, with lock file)**
+```bash
+# Install uv if not already installed
+pip install uv
+
+# Sync all dependencies from pyproject.toml (recommended)
+uv sync
+
+# Install optional ML models
+uv pip install xgboost catboost torch
+
+# Activate virtual environment
+# On Windows:
+.venv\Scripts\activate
+# On Unix/Mac:
+source .venv/bin/activate
+```
+
+**Alternative: Using pip**
 ```bash
 # Install Qlib and dependencies
 pip install pyqlib
@@ -51,6 +76,8 @@ jupyter notebook notebooks/00_quickstart.ipynb
 ```python
 # Initialize Qlib (required at start of each session)
 import qlib
+# On Windows, data stored in: C:\Users\<username>\.qlib\qlib_data\cn_data
+# On Unix/Mac, data stored in: ~/.qlib/qlib_data/cn_data
 qlib.init(provider_uri="~/.qlib/qlib_data/cn_data")
 
 # Download Qlib data (if not already present, ~1GB download)
@@ -148,15 +175,30 @@ Start with `00_quickstart.ipynb` for a complete but minimal example, then procee
 
 ## Dependencies
 
-- Python 3.7+
-- qlib (Microsoft's quantitative investment library)
-- pandas, numpy, matplotlib, plotly
-- lightgbm (for gradient boosting models)
-- Optional: pytorch, xgboost, catboost for additional models
+**Core Requirements** (defined in `pyproject.toml`):
+- Python 3.8+ (>=3.8 specified in pyproject.toml)
+- pyqlib (Microsoft's quantitative investment library)
+- pandas (>=1.3.0), numpy (>=1.21.0), matplotlib (>=3.5.0), plotly
+- scikit-learn (>=1.0.0), seaborn (>=0.11.0), statsmodels (>=0.14.1)
+- lightgbm (gradient boosting models)
+- jupyter, jupyterlab, notebook (>=6.0.0)
+- ipywidgets (>=8.0.0) for interactive visualizations
 
-Install Qlib:
+**Optional ML Models** (project.optional-dependencies):
+- xgboost, catboost, torch (install with: `uv sync --extra ml-extra`)
+
+**Development Tools**:
+- ruff (linting, configured in pyproject.toml)
+- Line length: 120 characters
+- Target: Python 3.8
+
+Install all dependencies:
 ```bash
-pip install pyqlib
+# Using uv (recommended)
+uv sync
+
+# Using pip
+pip install -e .
 ```
 
 ## Data Considerations
@@ -182,6 +224,8 @@ The repository includes `notebooks/experiment_config.json` with default settings
 - Model training with full CSI300 universe can be memory-intensive
 - Use step_len parameter carefully in TSDatasetH to avoid excessive memory usage
 - MLflow experiments are tracked in `notebooks/mlruns/` directory
+- Initial data loading may take 60+ seconds (as seen in 00_quickstart.ipynb)
+- LightGBM training typically completes in <2 seconds with default parameters
 
 ## Common Issues and Solutions
 
@@ -206,3 +250,21 @@ handler = Alpha158(
 - Clear output of large notebooks before committing: `Kernel > Restart & Clear Output`
 - Use `del` to explicitly free memory after large operations
 - Consider splitting large notebooks into smaller chunks
+
+### Chinese Font Display Issues
+If Chinese characters don't display correctly in matplotlib plots:
+```python
+import matplotlib.pyplot as plt
+plt.rcParams['font.sans-serif'] = ['Microsoft YaHei', 'SimHei', 'DejaVu Sans', 'Arial Unicode MS']
+plt.rcParams['axes.unicode_minus'] = False  # Fix minus sign display
+```
+
+### Platform-Specific Notes
+**Windows Users:**
+- Data stored in: `C:\Users\<username>\.qlib\qlib_data\cn_data`
+- Virtual environment activation: `.venv\Scripts\activate`
+- Use forward slashes or raw strings for paths in Python
+
+**Unix/Mac Users:**
+- Data stored in: `~/.qlib/qlib_data/cn_data`
+- Virtual environment activation: `source .venv/bin/activate`
