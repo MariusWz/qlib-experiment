@@ -25,6 +25,7 @@ dependencies = [
     "notebook>=6.0.0",
     "jupyterlab",
     "statsmodels>=0.14.1",
+    "yfinance>=0.2.66",
 ]
 
 [project.optional-dependencies]

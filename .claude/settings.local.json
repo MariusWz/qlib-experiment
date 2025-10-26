@@ -4,7 +4,9 @@
       "Bash(find:*)",
       "Bash(dir:*)",
       "Bash(python:*)",
-      "Bash(pip install:*)"
+      "Bash(pip install:*)",
+      "WebFetch(domain:qlib.readthedocs.io)",
+      "WebSearch"
     ],
     "deny": [],
     "ask": []
