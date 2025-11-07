@@ -1,12 +1,7 @@
 {
   "permissions": {
     "allow": [
-      "Bash(find:*)",
-      "Bash(dir:*)",
-      "Bash(python:*)",
-      "Bash(pip install:*)",
-      "WebFetch(domain:qlib.readthedocs.io)",
-      "WebSearch"
+      "WebFetch(domain:github.com)"
     ],
     "deny": [],
     "ask": []
